@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AntrianController;
 use App\Http\Controllers\ObatController;
+use App\Http\Controllers\PemeriksaanController;
 use App\Http\Controllers\PoliController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RawatJalanController;
@@ -51,9 +52,14 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('upload-bukti-pembayaran-poli/{id}', [RawatJalanController::class, 'indexUploadBuktiPembayaranPoli'])->name('upload-bukti-pembayaran-poli');
     Route::post('upload-bukti-pembayaran-poli/{id}', [RawatJalanController::class, 'prosesIndexUploadBuktiPembayaranPoli'])->name('upload-bukti-pembayaran-poli-proses');
 
+    //laman profile
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     Route::post('profile/{id}', [ProfileController::class, 'update'])->name('profile-update');
 
+    //laman tindakan dan resep
+    Route::get('pemeriksaan', [PemeriksaanController::class, 'index'])->name('pemeriksaan');
+    Route::get('pemeriksaan/tindakan-resep/{id}', [PemeriksaanController::class, 'resepform'])->name('resep-form');
+    Route::post('pemeriksaan/tindakan-resep/{id}', [PemeriksaanController::class, 'prosesResepForm'])->name('resep-form-proses');
     // getwilayah
     Route::get('kota/{kotaId?}', [RegionController::class, 'kota'])->name('kota');
     Route::get('kecamatan/{kecamatanId?}', [RegionController::class, 'kecamatan'])->name('kecamatan');

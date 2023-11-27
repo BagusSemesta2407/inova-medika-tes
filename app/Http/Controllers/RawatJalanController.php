@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DataPasien;
 use App\Models\Poli;
 use App\Models\RawatJalan;
+use App\Models\Resep;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -90,6 +91,8 @@ class RawatJalanController extends Controller
             'rawatJalan' => $rawatJalan
         ]);
     }
+
+   
     /**
      * Show the form for creating a new resource.
      */

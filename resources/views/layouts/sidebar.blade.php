@@ -108,6 +108,15 @@
                 </a>
             </li>
         @endrole
+
+        @role('dokter')
+            <li class="menu-item {{ request()->is('pemeriksaan*') ? 'active' : '' }} ">
+                <a href="{{ route('pemeriksaan') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bxs-user"></i>
+                    <div data-i18n="Analytics">Pemeriksaan</div>
+                </a>
+            </li>
+        @endrole
         {{-- kasir --}}
 
     </ul>
