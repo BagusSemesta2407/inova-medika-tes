@@ -95,7 +95,7 @@ class RawatJalan extends Model
     public function getImageUrlAttribute()
     {
         if ($this->image) {
-            return asset('storage/public/image/buktipembayaran/poli' . $this->image);
+            return asset('storage/public/image/buktipembayaran/poli/' . $this->image);
         }
 
         return null;

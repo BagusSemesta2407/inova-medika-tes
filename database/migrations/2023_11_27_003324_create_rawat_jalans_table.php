@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('poli_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('data_pasien_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('tindakan_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate()->nullable();
+            $table->foreignId('tindakan_id')->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('no_register')->nullable();
             $table->bigInteger('biaya_pelayanan')->nullable();
             $table->string('image')->nullable()->comment('upload-bukti-pembayaran');
-            $table->enum('status', ['Menunggu Antrian', 'Menunggu Pembayaran Pelayanan','Menunggu Konfirmasi Kasir', 'Pemeriksaan', 'Menunggu Pembayaran Resep', 'Menunggu Obat', 'Selesai']);
+            $table->enum('status', ['Menunggu Antrian', 'Menunggu Pembayaran Pelayanan','Menunggu Konfirmasi Kasir', 'Pemeriksaan', 'Menunggu Pembayaran Resep','Menunggu Konfirmasi Pembayaran Resep', 'Menunggu Obat', 'Selesai']);
             $table->timestamps();
         });
     }

@@ -45,12 +45,12 @@ class UserSeeder extends Seeder
 
         $user->assignRole('apoteker');
 
-        // $user = User::create([
-        //     'name' => 'Kasir',
-        //     'email' => 'kasir@kasir.id',
-        //     'password' => bcrypt('12345678'),
-        // ]);
+        $user = User::create([
+            'name' => 'Kasir',
+            'email' => 'kasir@kasir.id',
+            'password' => bcrypt('12345678'),
+        ]);
 
-        // $user->assignRole('kasir');
+        $user->assignRole('kasir');
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-xxl flex-grow-1 container-p-y">
-        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Profile</h4>
+        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Upload Bukti Pembayaran</h4>
 
         <div class="row">
             <div class="col-md-12">
@@ -24,7 +24,7 @@
                         <form id="formAccountDeactivation" method="POST" enctype="multipart/form-data" action="{{ route('upload-bukti-pembayaran-poli-proses', $rawatJalan) }}">
                             @csrf
                             <div class="mb-3">
-                                <label for="exampleFormControlSelect1" class="form-label">Nominal Yang Harus Dibayar</label>
+                                <label for="exampleFormControlSelect1" class="form-label">Upload Bukti Pembayaran</label>
                                 <input type="file" class="form-control" id="basic-default-fullname"
                                     placeholder="Masukkan NIK" name="image"/>
                             </div>

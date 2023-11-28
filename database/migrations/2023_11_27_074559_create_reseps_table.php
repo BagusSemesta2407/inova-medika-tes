@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('reseps', function (Blueprint $table) {
             $table->id();
             $table->foreignId('rawat_jalan_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->string('image')->comment('bukti_pembayaran_resep');
+            $table->string('image')->comment('bukti_pembayaran_resep')->nullable();
             $table->timestamps();
         });
     }

@@ -31,9 +31,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => ['auth']], function() {
+Route::group(['middleware' => ['auth']], function () {
     Route::resource('user', UserController::class);
-    
+
     Route::resource('poli', PoliController::class);
     Route::resource('tindakan', TindakanController::class);
     Route::resource('obat', ObatController::class);
@@ -52,9 +52,24 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('upload-bukti-pembayaran-poli/{id}', [RawatJalanController::class, 'indexUploadBuktiPembayaranPoli'])->name('upload-bukti-pembayaran-poli');
     Route::post('upload-bukti-pembayaran-poli/{id}', [RawatJalanController::class, 'prosesIndexUploadBuktiPembayaranPoli'])->name('upload-bukti-pembayaran-poli-proses');
 
+    //Konfirmasi Bukti Pembayaran Poli (kasir)
+    Route::get('konfirmasi-bukti-pembayaran-poli', [RawatJalanController::class, 'konfirmasiBuktiPembayaranPoli'])->name('pembayaran-poli');
+    Route::get('konfirmasi-bukti-pembayaran-poli/form/{id}', [RawatJalanController::class, 'formKonfirmasiBuktiPembayaranPoli'])->name('form-pembayaran-poli');
+    Route::post('konfirmasi-bukti-pembayaran-poli/form/{id}', [RawatJalanController::class, 'prosesFormKonfirmasiBuktiPembayaranPoli'])->name('proses-form-pembayaran-poli');
+
+    Route::get('pemberian-obat', [RawatJalanController::class, 'konfirmasiBuktiPembayaranPoli'])->name('beri-obat');
+    Route::get('pemberian-obat/form/{id}', [RawatJalanController::class, 'formKonfirmasiBuktiPembayaranPoli'])->name('form-beri-obat');
+    Route::post('pemberian-obat/form/{id}', [RawatJalanController::class, 'prosesFormKonfirmasiBuktiPembayaranPoli'])->name('proses-form-beri-obat');
+
+    //upload bukti pembayaran resep
+    Route::get('upload-bukti-pembayaran-resep/{id}', [RawatJalanController::class, 'pembayaranResepForm'])->name('pembayaran-resep');
+    Route::post('upload-bukti-pembayaran-resep/{id}', [RawatJalanController::class, 'prosesPembayaranResep'])->name('bukti-pembayaran-resep');
+
     //laman profile
     Route::get('profile', [ProfileController::class, 'index'])->name('profile');
     Route::post('profile/{id}', [ProfileController::class, 'update'])->name('profile-update');
+
+    //Konfirmasi Pembayaran Resep
 
     //laman tindakan dan resep
     Route::get('pemeriksaan', [PemeriksaanController::class, 'index'])->name('pemeriksaan');

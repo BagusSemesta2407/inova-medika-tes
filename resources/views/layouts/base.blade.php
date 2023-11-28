@@ -179,7 +179,7 @@
                     `);
 
                 $.each(data, function(key, value) {
-                    if ((oldValue ? oldValue.kotas_id : cityId) == value.id) {
+                    if ((oldValue ? oldValue.kota_id : cityId) == value.id) {
                         $('select[name="kota_id"]').append(`
                             <option value="${value.id}" selected>
                                 ${value.name}
@@ -193,11 +193,11 @@
                     }
                 });
 
-                let oldValueDistrict        = {!! json_encode(old('kecamatan_id')) !!}
+                // let oldValueDistrict        = {!! json_encode(old('kecamatan_id')) !!}
 
-                if (oldValue ? oldValue.kota_id : cityId) {
-                    getDistricts(oldValue ? oldValue.kota_id : cityId, oldValue, oldValueDistrict)
-                }
+                // if (oldValue ? oldValue.kota_id : cityId) {
+                //     getDistricts(oldValue ? oldValue.kota_id : cityId, oldValue, oldValueDistrict)
+                // }
             },
             error: function(data) {
                 console.log('Error :' + data);
@@ -228,11 +228,11 @@
                     }
                 });
 
-                let oldValueVillage         = {!! json_encode(old('desa_id')) !!}
+                // let oldValueVillage         = {!! json_encode(old('desa_id')) !!}
 
-                if (oldValue ? oldValue.kecamatan_id : districtId) {
-                    getVillages(oldValue ? oldValue.kecamatan_id : districtId, oldValue, oldValueVillage)
-                }
+                // if (oldValue ? oldValue.kecamatan_id : districtId) {
+                //     getVillages(oldValue ? oldValue.kecamatan_id : districtId, oldValue, oldValueVillage)
+                // }
             },
             error: function(data) {
                 console.log('Error :' + data);

@@ -66,10 +66,11 @@
             </a>
         </li>
 
-        <li class="menu-header small text-uppercase">
-            <span class="menu-header-text">Pages</span>
-        </li>
+
         @role('front_office')
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Master Data</span>
+            </li>
             <li class="menu-item {{ request()->is('user*') ? 'active' : '' }} ">
                 <a href="{{ route('user.index') }}" class="menu-link">
                     <i class="menu-icon tf-icons bx bxs-user"></i>
@@ -92,6 +93,10 @@
                 </a>
             </li>
 
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Pelayanan</span>
+            </li>
+
             <li class="menu-item {{ request()->is('fo-antrian*') ? 'active' : '' }} ">
                 <a href="{{ route('fo-antrian') }}" class="menu-link">
                     <i class="menu-icon tf-icons bx bxs-user"></i>
@@ -101,19 +106,44 @@
         @endrole
 
         @role('apoteker')
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Master Data</span>
+            </li>
             <li class="menu-item {{ request()->is('obat*') ? 'active' : '' }} ">
                 <a href="{{ route('obat.index') }}" class="menu-link">
                     <i class="menu-icon tf-icons bx bxs-user"></i>
                     <div data-i18n="Analytics">Obat</div>
                 </a>
             </li>
+
+            <li class="menu-item {{ request()->is('pemberian-obat*') ? 'active' : '' }} ">
+                <a href="{{ route('beri-obat') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bxs-user"></i>
+                    <div data-i18n="Analytics">Pemberian Obat</div>
+                </a>
+            </li>
         @endrole
 
         @role('dokter')
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Pelayanan</span>
+            </li>
             <li class="menu-item {{ request()->is('pemeriksaan*') ? 'active' : '' }} ">
                 <a href="{{ route('pemeriksaan') }}" class="menu-link">
                     <i class="menu-icon tf-icons bx bxs-user"></i>
                     <div data-i18n="Analytics">Pemeriksaan</div>
+                </a>
+            </li>
+        @endrole
+
+        @role('kasir')
+            <li class="menu-header small text-uppercase">
+                <span class="menu-header-text">Transaksi</span>
+            </li>
+            <li class="menu-item {{ request()->is('konfirmasi-bukti-pembayaran-poli*') ? 'active' : '' }} ">
+                <a href="{{ route('pembayaran-poli') }}" class="menu-link">
+                    <i class="menu-icon tf-icons bx bxs-user"></i>
+                    <div data-i18n="Analytics">Pembayaran Poli</div>
                 </a>
             </li>
         @endrole

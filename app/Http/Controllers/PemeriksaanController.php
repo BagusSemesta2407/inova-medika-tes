@@ -37,7 +37,7 @@ class PemeriksaanController extends Controller
     {
         $dataRawatJalan=[
             'tindakan_id' => $request->tindakan_id,
-            'status' => 'Selesai'
+            'status' => 'Menunggu Pembayaran Resep'
         ];
 
         RawatJalan::where('id', $id)->update($dataRawatJalan);

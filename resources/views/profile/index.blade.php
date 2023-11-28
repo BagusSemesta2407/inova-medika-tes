@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlSelect1" class="form-label">Provinsi</label>
-                                    <select name="provinsi_id" class="form-select" id="kota_id"
+                                    <select name="provinsi_id" class="form-select" id="provinsi_id"
                                         aria-label="Default select example">
                                         <option value="" disabled selected>Pilih Provinsi</option>
                                         @foreach ($provinsi as $province)
